@@ -59,4 +59,22 @@ RSpec.describe Post, type: :model do
     comment6 = Comment.create(author: @user1, post: @post1, text: 'Text6')
     expect(@post1.last_5_comments).to eq([comment6, comment5, comment4, comment3, comment2])
   end
+
+  it 'Adding a comment to post should increment its comments_counter' do
+    @post1.likes_counter = 0
+    @post1.comments_counter = 0
+    @post1.save
+    counter = @post1.comments_counter
+    Comment.create(author: @user1, post: @post1, text: 'Text1')
+    expect(@post1.comments_counter).to eq(counter + 1)
+  end
+
+  it 'Adding a like to post should increment its likes_counter' do
+    @post1.likes_counter = 0
+    @post1.comments_counter = 0
+    @post1.save
+    counter = @post1.likes_counter
+    Like.create(author: @user1, post: @post1)
+    expect(@post1.likes_counter).to eq(counter + 1)
+  end
 end
