@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A Web Page</title>
-</head>
-<body>
 <h1>Here is a list of users of this page!</h1>
-</body>
-</html>
+<% @users.each do |user| %>
+  <div class="oneuser">
+    <% userphoto = user.photo.nil? ? "no_photo.png" : user.photo %>
+    <div class="photo"><%= image_tag("#{ userphoto }", size: "129") %></div>
+    <div class="userandposts">
+      <div class="username"><%= user.name %></div>
+      <div class="postscounter">Number of posts: <%= user.posts_counter %></div>
+    </div>
+  </div>
+<% end %>

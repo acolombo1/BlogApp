@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+body {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.oneuser {
+  display: flex;
+}
+
+.photo {
+  margin: 10px;
+  width: 129px;
+}
+
+.userandposts {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.username {
+  font-size: 56px;
+  align-self: center;
+}
+
+.postscounter {
+  font-size: 14px;
+  align-self: flex-end;
+}
