@@ -57,6 +57,6 @@ RSpec.describe Post, type: :model do
     comment4 = Comment.create(author: @user1, post: @post1, text: 'Text4')
     comment5 = Comment.create(author: @user1, post: @post1, text: 'Text5')
     comment6 = Comment.create(author: @user1, post: @post1, text: 'Text6')
-    expect(@post1.last_5_comments).to eq([comment6, comment5, comment4, comment3, comment2])
+    expect(@post1.last_5_comments).to eq([comment2, comment3, comment4, comment5, comment6])
   end
 end
