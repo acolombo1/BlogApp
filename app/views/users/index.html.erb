@@ -1,10 +1,10 @@
-<h1>Here is a list of users of this page!</h1>
+<h1 class="hidden">Here is a list of users of this page!</h1>
 <% @users.each do |user| %>
   <div class="oneuser">
     <% userphoto = user.photo.nil? ? "no_photo.png" : user.photo %>
     <div class="photo"><%= image_tag("#{ userphoto }", size: "129") %></div>
-    <div class="userandposts">
-      <div class="username"><%= user.name %></div>
+    <div class="userandposts">     
+      <div class="username"><%= link_to "#{ user.name }", "/users/#{ user.id }" %></div>
       <div class="postscounter">Number of posts: <%= user.posts_counter %></div>
     </div>
   </div>
