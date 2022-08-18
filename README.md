@@ -12,8 +12,10 @@
 
 ## Getting Started
 
+- Install Postgre SQL, ensure a username 'postgres' with password: 'cualespos31' is available
 - git clone https://github.com/acolombo1/BlogApp.git
 - cd BlogApp
+- rails db:reset
 - rails s
 ## Usage
 
