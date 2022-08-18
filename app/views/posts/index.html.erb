@@ -1,11 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A Web Page</title>
-</head>
-<body>
-<h1>Here is the list of posts for user XX!</h1>
-</body>
-</html>
+<h1 class="hidden">Here is the list of posts for user XX!</h1>
+<div class="oneuser">
+  <% userphoto = @user.photo.nil? ? "no_photo.png" : @user.photo %>
+  <div class="photo"><%= image_tag("#{ userphoto }", size: "129") %></div>
+  <div class="userandposts">      
+    <div class="username"><%= @user.name %></div>
+    <div class="postscounter">Number of posts: <%= @user.posts_counter %></div>
+  </div>
+</div>
+<div class="allposts">
+  <% @posts.each do |post| %>
+    <div class="onepost">
+      <div class="titlepost">
+        <p><%= link_to "#{ post.title }", "/users/#{ @user.id }/posts/#{ post.id }" %></p>
+        <p><%= post.text.truncate(170) %></p>
+      </div>
+      <div class="commentslikes">
+        Comments: <%= post.comments_counter %>, 
+        Likes: <%= post.likes_counter %>
+      </div>
+    </div>
+    <% if post.comments != [] %>
+      <div class="comments">
+        <% post.last_5_comments.each do |comment| %>
+            <%= User.find(comment.author_id).name %>: <%= comment.text %><br>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="button-wrapper">
+  <div class="button-link">
+    <%= link_to "Pagination", "/" %>
+  </div>
+</div>

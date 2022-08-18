@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A Web Page</title>
-</head>
-<body>
-<h1>Here is post NN from user XX!</h1>
-</body>
-</html>
+<h1 class="hidden">Here is post NN from user XX!</h1>
+<div class="onepost">
+  <div class="titlepost">
+    <p><%= @post.title %> by <%= @user.name %></p>
+    <p><%= @post.text %></p>
+  </div>
+  <div class="commentslikes2">
+    Comments: <%= @post.comments_counter %>, 
+    Likes: <%= @post.likes_counter %>
+  </div>
+</div>
+<% if @post.comments != [] %>
+  <div class="comments">
+    <% @post.comments.each do |comment| %>
+        <%= User.find(comment.author_id).name %>: <%= comment.text %><br>
+    <% end %>
+  </div>
+<% end %>

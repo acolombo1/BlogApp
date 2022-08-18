@@ -13,3 +13,118 @@
  *= require_tree .
  *= require_self
  */
+body {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.oneuser {
+  display: flex;
+}
+
+.photo {
+  margin: 10px;
+  width: 129px;
+}
+
+.userandposts {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.username {
+  font-size: 56px;
+  align-self: center;
+}
+
+.username a {
+  text-decoration: none;
+  color: black;
+}
+
+.postscounter {
+  font-size: 14px;
+  align-self: flex-end;
+}
+
+.bio {
+  font-size: 18px;
+  padding: 20px;
+  margin: 10px;
+  border: 2px solid black;
+}
+
+.onepost {
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentslikes {
+  font-size: 12px;
+  align-self: flex-end;
+}
+
+.titlepost {
+  align-self: center;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.button-link {
+  text-align: center;
+  height: 20px;
+  width: 120px;
+  padding: 5px 10px;
+  background: #b9b9b9;
+  color: black;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: solid 1px #4b4b4b;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+}
+
+.button-link a {
+  text-decoration: none;
+  color: black;
+}
+
+.button-link:hover {
+  background: #8d8d8d;
+  border: solid 1px #5c5c5c;
+  text-decoration: none;
+}
+
+.comments {
+  font-size: 14px;
+  padding: 5px;
+  margin: 10px 20px;
+  border: 1px solid black;
+}
+
+.commentslikes2 {
+  font-size: 12px;
+  align-self: flex-start;
+  padding-top: 30px;
+}
