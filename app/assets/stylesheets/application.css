@@ -152,10 +152,10 @@ input {
 }
 
 button {
-  background: none!important;
+  background: none !important;
   border: none;
-  padding: 0!important;
-  margin: 0!important;
+  padding: 0 !important;
+  margin: 0 !important;
   font-family: 'Times New Roman', Times, serif;
   color: #069;
   text-decoration: underline;
