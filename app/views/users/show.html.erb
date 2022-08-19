@@ -4,7 +4,12 @@
   <div class="photo"><%= image_tag("#{ userphoto }", size: "129") %></div>
   <div class="userandposts">      
     <div class="username"><%= @user.name %></div>
-    <div class="postscounter">Number of posts: <%= @user.posts_counter %></div>
+    <div class="postscounter">
+      <% if @user == @current_user %>
+        <%= link_to 'New Post', new_post_path %><br>
+      <% end %>
+      Number of posts: <%= @user.posts_counter %>
+    </div>
   </div>
 </div>
 <div class="bio">

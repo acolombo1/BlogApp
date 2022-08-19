@@ -79,6 +79,8 @@ body {
 
 .titlepost {
   align-self: center;
+  max-width: 90%;
+  word-break: break-word;
 }
 
 .button-wrapper {
@@ -127,4 +129,35 @@ body {
   font-size: 12px;
   align-self: flex-start;
   padding-top: 30px;
+}
+
+.newpost {
+  font-size: 20px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+textarea {
+  font-size: 18px;
+}
+
+input {
+  font-size: 18px;
+}
+
+.submit {
+  font-size: 18px;
+  margin: 10px;
+}
+
+button {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  margin: 0!important;
+  font-family: 'Times New Roman', Times, serif;
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
 }
