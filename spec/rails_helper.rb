@@ -83,7 +83,7 @@ RSpec.configure do |config|
   end
 end
 
-RSpec.describe "Signing in", js: true do
+RSpec.describe 'Signing in', js: true do
   # tests that actually execute JavaScript
 end
 
