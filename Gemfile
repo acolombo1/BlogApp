@@ -72,7 +72,6 @@ group :test do
   gem 'ffi'
   gem 'rails-controller-testing'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
 
 group :development, :test do
