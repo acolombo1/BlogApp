@@ -77,4 +77,5 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'database_cleaner'
 end
