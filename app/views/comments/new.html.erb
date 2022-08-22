@@ -1,0 +1,15 @@
+<div class="newpost">
+  <h1>New Comment</h1>
+  <% flash.each do |type, msg| %>
+    <div>
+    <%= msg if type="error" %>
+    </div>
+  <% end %>
+  <%= form_with model: comment, url: comment_path, method: :post, local: true, scope: :comment do |f| %>
+    <div>
+      <%= f.label :text %><br>
+      <%= f.text_area :text, :cols => 60, :rows => 4 %>
+    </div>
+    <%= f.submit "Add Comment" , class: "submit" %>
+  <% end %>
+</div>

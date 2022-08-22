@@ -1,10 +1,20 @@
 <h1 class="hidden">Here is the list of posts for user XX!</h1>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg if type="success" %>
+  </div>
+<% end %>
 <div class="oneuser">
   <% userphoto = @user.photo.nil? ? "no_photo.png" : @user.photo %>
   <div class="photo"><%= image_tag("#{ userphoto }", size: "129") %></div>
   <div class="userandposts">      
     <div class="username"><%= @user.name %></div>
-    <div class="postscounter">Number of posts: <%= @user.posts_counter %></div>
+    <div class="postscounter">
+      <% if @user == @current_user %>
+        <%= link_to 'New Post', new_post_path %><br>
+      <% end %>
+      Number of posts: <%= @user.posts_counter %>
+    </div>
   </div>
 </div>
 <div class="allposts">
@@ -15,6 +25,8 @@
         <p><%= post.text.truncate(170) %></p>
       </div>
       <div class="commentslikes">
+        <%= link_to 'New Comment', "/users/#{ @user.id }/posts/#{ post.id }/new_comment" %>
+         / <%= button_to 'Like', "/users/#{ @user.id }/posts/#{ post.id }/like" %><br>
         Comments: <%= post.comments_counter %>, 
         Likes: <%= post.likes_counter %>
       </div>
