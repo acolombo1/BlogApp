@@ -4,8 +4,8 @@ RSpec.describe 'Main (users) page.', type: :system do
   subject!(:tom) { User.where(name: 'Tom').first }
 
   before(:all) do
-    Rails.application.load_seed
     driven_by(:selenium_chrome_headless)
+    Rails.application.load_seed
   end
 
   it 'Shows all users' do
@@ -81,6 +81,23 @@ RSpec.describe 'User Show page.', type: :system do
     click_link('See all posts')
     expect(page).to have_current_path "http://localhost:3000/users/#{tom.id}/posts"
   end
+end
 
-  # When I click to see all posts, it redirects me to the user's post's index page.
+RSpec.describe 'Posts page.', type: :system do
+  subject!(:tom) { User.where(name: 'Tom').first }
+
+  before(:all) do
+    driven_by(:selenium_chrome_headless)
+  end
+
+  it 'Shows username' do
+    visit("http://localhost:3000/users/#{tom.id}/posts")
+    expect(page).to have_content('Tom')
+  end
+
+  it 'Shows profile picture' do
+    visit("http://localhost:3000/users/#{tom.id}/posts")
+    image = page.all('img')
+    expect(image[0]['src']).to eq('https://acolombo1.github.io/Portfolio/foto1.jpg')
+  end
 end
