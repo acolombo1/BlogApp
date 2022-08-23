@@ -101,42 +101,42 @@ RSpec.describe 'Posts page.', type: :system do
     expect(image[0]['src']).to eq('https://acolombo1.github.io/Portfolio/foto1.jpg')
   end
 
-  it 'Show the number of posts the user has written.' do
+  it 'Shows the number of posts the user has written.' do
     visit("http://localhost:3000/users/#{tom.id}/posts")
-    expect(page).to have_content('Number of posts: 4') 
+    expect(page).to have_content('Number of posts: 4')
   end
 
-  it 'Show a posts title' do
+  it 'Shows a posts title' do
     visit("http://localhost:3000/users/#{tom.id}/posts")
     expect(page).to have_content('Hello')
   end
 
-  it 'Show some of the posts body' do
+  it 'Shows some of the posts body' do
     visit("http://localhost:3000/users/#{tom.id}/posts")
     expect(page).to have_content('This is my first post')
   end
 
-  it 'show the first comments on a post' do
+  it 'Shows the first comments on a post' do
     visit("http://localhost:3000/users/#{tom.id}/posts")
     expect(page).to have_content('Hi, how are you?')
   end
 
-  it 'Show how many comments a post has' do
+  it 'Shows how many comments a post has' do
     visit("http://localhost:3000/users/#{tom.id}/posts")
     expect(page).to have_content('Comments: 6')
   end
 
-  it 'Show how many likes a post has' do
+  it 'Shows how many likes a post has' do
     visit("http://localhost:3000/users/#{tom.id}/posts")
     expect(page).to have_content('Likes: 0')
   end
-  
-  it 'section for pagination if there are more posts than fit on the view' do
+
+  it 'Shows button for pagination if there are more posts than fit on the view' do
     visit("http://localhost:3000/users/#{tom.id}/posts")
     expect(page).to have_content('Pagination')
   end
-  
-  it 'When I click on a post, it redirects me to that posts show page' do
+
+  it 'When a post is clicked, redirects to that post\'s show page' do
     visit("http://localhost:3000/users/#{tom.id}/posts")
     click_link('Hello')
     expect(page).to have_content('Hello by Tom')
@@ -145,44 +145,44 @@ end
 
 RSpec.describe 'Posts page.', type: :system do
   subject!(:tom) { User.where(name: 'Tom').first }
-  subject!(:post) { Post.where(author_id: 1).first}
+  subject!(:post) { Post.where(author_id: 1).first }
 
   before(:all) do
     driven_by(:selenium_chrome_headless)
   end
-  
-  it 'Show posts title' do
+
+  it 'Shows posts title' do
     visit("http://localhost:3000/users/#{tom.id}/posts/#{post.id}")
     expect(page).to have_content('Hello by Tom')
   end
 
-  it 'Show who wrote the post' do
+  it 'Shows who wrote the post' do
     visit("http://localhost:3000/users/#{tom.id}/posts/#{post.id}")
     expect(page).to have_content('by Tom')
   end
 
-  it 'Show many comments it has' do
+  it 'Shows many comments it has' do
     visit("http://localhost:3000/users/#{tom.id}/posts/#{post.id}")
     expect(page).to have_content('Comments: 6')
   end
 
-  it 'Show many likes it has' do
+  it 'Shows how many likes it has' do
     visit("http://localhost:3000/users/#{tom.id}/posts/#{post.id}")
     expect(page).to have_content('Likes: 0')
   end
 
-  it 'Show post body' do
+  it 'Shows post body' do
     visit("http://localhost:3000/users/#{tom.id}/posts/#{post.id}")
     expect(page).to have_content('This is my first post')
   end
 
-  it 'show username of each commentor' do
+  it 'Shows username of each commentor' do
     visit("http://localhost:3000/users/#{tom.id}/posts/#{post.id}")
     expect(page).to have_content('Lilly: ')
     expect(page).to have_content('Tom: ')
   end
 
-  it 'show comment each commentor left' do
+  it 'Shows comment each commentor left' do
     visit("http://localhost:3000/users/#{tom.id}/posts/#{post.id}")
     expect(page).to have_content('Hi Tom!')
     expect(page).to have_content('Hi, how are you?')
