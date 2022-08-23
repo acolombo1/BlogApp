@@ -7,6 +7,8 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rspec'
+require 'webdrivers'
+require 'selenium-webdriver'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -82,13 +84,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
-
-RSpec.describe 'Signing in', js: true do
-  # tests that actually execute JavaScript
+Capybara.configure do |config|
+  config.run_server = false
 end
-
-Capybara.register_driver :selenium_chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
-end
-
-Capybara.javascript_driver = :selenium_chrome
+session = Capybara::Session.new(:selenium)
