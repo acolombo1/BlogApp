@@ -20,7 +20,7 @@
   <% @user.last_3_posts.each do |post| %>
     <div class="onepost">
       <div class="titlepost">
-        <p><%= post.title %></p>
+        <p><%= link_to "#{ post.title }", "/users/#{ @user.id }/posts/#{ post.id }" %></p>
         <p><%= post.text.truncate(170) %></p>
       </div>
       <div class="commentslikes">
