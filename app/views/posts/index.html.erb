@@ -1,7 +1,7 @@
 <h1 class="hidden">Here is the list of posts for user XX!</h1>
 <% flash.each do |type, msg| %>
   <div>
-    <%= msg if type="success" %>
+    <%= msg if type=="success" %>
   </div>
 <% end %>
 <div class="oneuser">
@@ -18,7 +18,7 @@
   </div>
 </div>
 <div class="allposts">
-  <% @posts.each do |post| %>
+  <% @posts.includes([:comments]).each do |post| %>
     <div class="onepost">
       <div class="titlepost">
         <p><%= link_to "#{ post.title }", "/users/#{ @user.id }/posts/#{ post.id }" %></p>

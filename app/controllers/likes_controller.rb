@@ -5,8 +5,7 @@ class LikesController < ApplicationController
 
     likes = likes_author.merge(likes_post)
 
-    #    if likes == [] && current_user.id != Post.find(params[:id]).author_id
-    return unless likes == []
+    return unless likes == [] && current_user.id != Post.find(params[:id]).author_id
 
     like = Like.new
     like.author_id = current_user.id
@@ -16,6 +15,7 @@ class LikesController < ApplicationController
       format.html do
         like.save
         redirect_to "/users/#{current_user.id}/posts/"
+        # request referer
       end
     end
   end

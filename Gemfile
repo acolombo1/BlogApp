@@ -72,9 +72,12 @@ group :test do
   gem 'ffi'
   gem 'rails-controller-testing'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'webdrivers', '~> 5.0'
 end
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'rspec-rails'
 end
+
+gem 'bullet'
