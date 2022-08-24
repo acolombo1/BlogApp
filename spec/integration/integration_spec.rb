@@ -8,10 +8,6 @@ RSpec.describe 'Main (users) page.', type: :system do
     Rails.application.load_seed
   end
 
-  it 'No expectation warm-up' do
-    visit('http://localhost:3000/')
-  end
-
   it 'Shows all users' do
     visit('http://localhost:3000/')
     expect(page).to have_content('Lilly')
@@ -44,10 +40,6 @@ RSpec.describe 'User Show page.', type: :system do
 
   before(:all) do
     driven_by(:selenium_chrome_headless)
-  end
-
-  it 'No expectation warm-up' do
-    visit("http://localhost:3000/users/#{tom.id}/")
   end
 
   it 'Shows username' do
@@ -96,10 +88,6 @@ RSpec.describe 'Posts page.', type: :system do
 
   before(:all) do
     driven_by(:selenium_chrome_headless)
-  end
-
-  it 'No expectation warm-up' do
-    visit("http://localhost:3000/users/#{tom.id}/posts")
   end
 
   it 'Shows username' do
@@ -161,10 +149,6 @@ RSpec.describe 'Posts page.', type: :system do
 
   before(:all) do
     driven_by(:selenium_chrome_headless)
-  end
-
-  it 'No expectation warm-up' do
-    visit("http://localhost:3000/users/#{tom.id}/posts/#{post.id}")
   end
 
   it 'Shows posts title' do
