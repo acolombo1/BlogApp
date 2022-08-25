@@ -77,6 +77,7 @@ end
 
 group :development, :test do
   gem 'database_cleaner'
+  gem 'letter_opener'
   gem 'rspec-rails'
 end
 

@@ -19,3 +19,7 @@
     <%= f.submit "Add Post" , class: "submit" %>
   <% end %>
 </div>
+<div class="mylinks">
+  <div><%= button_to "Home", root_path, method: :get %></div>
+  <div><%= button_to "Logout", destroy_user_session_path, method: :delete, data: { turbo: false } %></div>
+</div>
