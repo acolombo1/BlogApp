@@ -151,7 +151,7 @@ input {
   margin: 10px;
 }
 
-button {
+.buttonlink {
   background: none !important;
   border: none;
   padding: 0 !important;
@@ -160,4 +160,53 @@ button {
   color: #069;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.below_links {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.mylinks {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-size: 16px !important;
+}
+
+.login {
+  font-size: 18px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.field {
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.action {
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.submitbutton {
+  width: 300px;
+}
+
+.myinput {
+  width: 300px;
+}
+
+.small {
+  font-size: 14px;
 }

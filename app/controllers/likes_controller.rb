@@ -1,4 +1,6 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     likes_author = Like.where(author_id: current_user.id)
     likes_post = Like.where(post_id: params[:id])
@@ -14,8 +16,7 @@ class LikesController < ApplicationController
     respond_to do |format|
       format.html do
         like.save
-        redirect_to "/users/#{current_user.id}/posts/"
-        # request referer
+        redirect_to(request.referer)
       end
     end
   end

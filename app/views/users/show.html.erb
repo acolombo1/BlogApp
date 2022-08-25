@@ -24,8 +24,12 @@
         <p><%= post.text.truncate(170) %></p>
       </div>
       <div class="commentslikes">
-        Comments: <%= post.comments_counter %>, 
-        Likes: <%= post.likes_counter %>
+        <div class="commentslikes">
+          <%= link_to 'New Comment', "/users/#{ @user.id }/posts/#{ post.id }/new_comment" %>
+          / <%= button_to 'Like', "/users/#{ @user.id }/posts/#{ post.id }/like", { class: "buttonlink" } %><br>
+          Comments: <%= post.comments_counter %>, 
+          Likes: <%= post.likes_counter %>
+        </div>
       </div>
     </div>
   <% end %>
@@ -34,4 +38,8 @@
   <div class="button-link">
     <%= link_to "See all posts", "/users/#{ @user.id }/posts" %>
   </div>
+</div>
+<div class="mylinks">
+  <div><%= button_to "Home", root_path, method: :get %></div>
+  <div><%= button_to "Logout", destroy_user_session_path, method: :delete, data: { turbo: false } %></div>
 </div>

@@ -6,7 +6,7 @@
   </div>
   <div class="commentslikes2">
     <%= link_to 'New Comment', "/users/#{ @user.id }/posts/#{ @post.id }/new_comment" %>
-    / <%= button_to 'Like', "/users/#{ @user.id }/posts/#{ @post.id }/like" %><br>
+    / <%= button_to 'Like', "/users/#{ @user.id }/posts/#{ @post.id }/like", { class: "buttonlink" } %><br>
     Comments: <%= @post.comments_counter %>, 
     Likes: <%= @post.likes_counter %>
   </div>
@@ -18,3 +18,7 @@
     <% end %>
   </div>
 <% end %>
+<div class="mylinks">
+  <div><%= button_to "Home", root_path, method: :get %></div>
+  <div><%= button_to "Logout", destroy_user_session_path, method: :delete, data: { turbo: false } %></div>
+</div>

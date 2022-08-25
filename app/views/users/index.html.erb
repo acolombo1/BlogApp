@@ -9,3 +9,6 @@
     </div>
   </div>
 <% end %>
+<div class="mylinks">
+  <div><%= button_to "Logout", destroy_user_session_path, method: :delete, data: { turbo: false } %></div>
+</div>
