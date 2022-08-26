@@ -25,8 +25,11 @@
         <p><%= post.text.truncate(170) %></p>
       </div>
       <div class="commentslikes">
-        <%= link_to 'New Comment', "/users/#{ @user.id }/posts/#{ post.id }/new_comment" %>
-         / <%= button_to 'Like', "/users/#{ @user.id }/posts/#{ post.id }/like", { class: "buttonlink" } %><br>
+        <div class="threelinks">
+          <%= link_to 'New Comment', "/users/#{ @user.id }/posts/#{ post.id }/new_comment" %>&nbsp;
+          |&nbsp;<%= button_to 'Like', "/users/#{ @user.id }/posts/#{ post.id }/like", { class: "buttonlink" } %>&nbsp;
+          |&nbsp;<%= link_to "Delete", "/users/#{ @user.id }/posts/#{ post.id }/destroy", data: { 'turbo-method': :post, 'turbo-confirm': 'Are you sure?' } %>
+        </div>
         Comments: <%= post.comments_counter %>, 
         Likes: <%= post.likes_counter %>
       </div>
@@ -34,7 +37,10 @@
     <% if post.comments != [] %>
       <div class="comments">
         <% post.last_5_comments.each do |comment| %>
-            <%= User.find(comment.author_id).name %>: <%= comment.text %><br>
+            <div class="onecomment">
+              <div><%= User.find(comment.author_id).name %>: <%= comment.text %></div>
+              <div class="deletecomment"><%= link_to "Delete comment", "/users/#{ @user.id }/#{ comment.id }/destroy", data: { 'turbo-method': :post, 'turbo-confirm': 'Are you sure?' } %></div>
+            </div>
         <% end %>
       </div>
     <% end %>

@@ -11,11 +11,17 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-    <p>Logged in as <strong><%= current_user.email %></strong></p>
-  <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <header>
+      <% if user_signed_in? %>
+        <div>Logged in as <strong><%= current_user.email %></strong> 
+        <% if url_for!=new_post_path %>
+          |&nbsp;<%= link_to 'New Post', new_post_path %></div>
+        <% end %>
+      <% end %>
+      <div class="notice"><%= notice %></div>
+      <div class="alert"><%= alert %></div>
+    </header>
+    
     <%= yield %>
 
   </body>

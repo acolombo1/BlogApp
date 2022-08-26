@@ -26,4 +26,11 @@ class CommentsController < ApplicationController
       end
     end
   end
+  
+  def destroy
+    @comment = Comment.find(params[:id])
+    authorize! :destroy, @comment
+    @comment.destroy
+    redirect_to(request.referer)
+  end
 end

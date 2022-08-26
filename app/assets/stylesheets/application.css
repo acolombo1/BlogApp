@@ -79,7 +79,7 @@ body {
 
 .titlepost {
   align-self: center;
-  max-width: 90%;
+  max-width: 88%;
   word-break: break-word;
 }
 
@@ -157,6 +157,7 @@ input {
   padding: 0 !important;
   margin: 0 !important;
   font-family: 'Times New Roman', Times, serif;
+  font-size: 12px !important;
   color: #069;
   text-decoration: underline;
   cursor: pointer;
@@ -209,4 +210,22 @@ input {
 
 .small {
   font-size: 14px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.threelinks {
+  display: flex;
+}
+
+.onecomment {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deletecomment {
+  font-size: 12px;
 }
