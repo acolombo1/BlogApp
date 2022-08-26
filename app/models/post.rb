@@ -26,6 +26,10 @@ class Post < ApplicationRecord
   end
 
   def dec_author_posts_counter
-    author.posts_counter==0 ? author.update(posts_counter: 0) : author.update(posts_counter: author.posts_counter - 1)
+    if author.posts_counter.zero?
+      author.update(posts_counter: 0)
+    else
+      author.update(posts_counter: author.posts_counter - 1)
+    end
   end
 end

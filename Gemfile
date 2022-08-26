@@ -82,5 +82,5 @@ group :development, :test do
 end
 
 gem 'bullet'
-gem 'devise'
 gem 'cancancan'
+gem 'devise'
