@@ -5,8 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-first_user = User.create(name: 'Tom', photo: 'https://acolombo1.github.io/Portfolio/foto1.jpg', bio: 'Teacher from Mexico.', posts_counter: 0)
-second_user = User.create(name: 'Lilly', bio: 'Teacher from Poland.', posts_counter: 0)
+first_user = User.create(name: 'Tom', photo: 'https://acolombo1.github.io/Portfolio/foto1.jpg', bio: 'Teacher from Mexico.', email: 'tomsmail@yahoo.com', role: 'admin', posts_counter: 0)
+second_user = User.create(name: 'Lilly', bio: 'Teacher from Poland.', email: 'lilly@yahoo.com', posts_counter: 0)
+first_user.password = '123456'
+first_user.password_confirmation = '123456'
+first_user.confirm
+second_user.password = '123456'
+second_user.password_confirmation = '123456'
+second_user.confirm
 
 first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post', likes_counter: 0, comments_counter: 0)
 Post.create(author: first_user, title: 'Post nr 2', text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releax map lapora verita.', likes_counter: 0, comments_counter: 0)

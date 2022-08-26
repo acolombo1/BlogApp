@@ -25,8 +25,13 @@
       </div>
       <div class="commentslikes">
         <div class="commentslikes">
-          <%= link_to 'New Comment', "/users/#{ @user.id }/posts/#{ post.id }/new_comment" %>
-          / <%= button_to 'Like', "/users/#{ @user.id }/posts/#{ post.id }/like", { class: "buttonlink" } %><br>
+          <div class="threelinks">
+            <%= link_to 'New Comment', "/users/#{ @user.id }/posts/#{ post.id }/new_comment" %>&nbsp;
+            |&nbsp;<%= button_to 'Like', "/users/#{ @user.id }/posts/#{ post.id }/like", { class: "buttonlink" } %>&nbsp;
+            <% if can? :destroy, post %>
+              |&nbsp;<%= link_to "Delete", "/users/#{ @user.id }/posts/#{ post.id }/destroy", data: { 'turbo-method': :post, 'turbo-confirm': 'Are you sure?' } %>
+            <% end %>
+          </div>
           Comments: <%= post.comments_counter %>, 
           Likes: <%= post.likes_counter %>
         </div>
