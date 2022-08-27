@@ -84,3 +84,7 @@ end
 gem 'bullet'
 gem 'cancancan'
 gem 'devise'
+
+gem 'bcrypt'
+gem 'jwt'
+gem 'rack-cors'

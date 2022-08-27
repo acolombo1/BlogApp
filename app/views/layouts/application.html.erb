@@ -17,6 +17,7 @@
         <% if url_for!=new_post_path %>
           |&nbsp;<%= link_to 'New Post', new_post_path %></div>
         <% end %>
+        <%= link_to "GET YOUR API TOKEN", api_token_user_path(current_user.id) %>
       <% end %>
       <div class="notice"><%= notice %></div>
       <div class="alert"><%= alert %></div>
