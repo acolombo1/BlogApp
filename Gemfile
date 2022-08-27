@@ -84,3 +84,6 @@ end
 gem 'bullet'
 gem 'cancancan'
 gem 'devise'
+gem 'devise-jwt'
+gem 'rack-cors'
+gem 'dotenv-rails', groups: [:development, :test]

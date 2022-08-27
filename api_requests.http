@@ -1,0 +1,66 @@
+GET http://localhost:3000/users/1/posts_list
+content-type: application/json
+
+###
+
+POST http://localhost:3000/users
+content-type: application/json
+
+{
+  "user": {
+    "email": "acolobo@yahoo.com",
+    "password": "123456"
+  }
+}
+
+###
+
+POST http://localhost:3000/users/sign_in
+content-type: application/json
+
+{
+  "user": {
+    "email": "tomsmail@yahoo.com",
+    "password": "123456"
+  }
+}
+
+###
+
+POST http://localhost:3000/users/sign_in
+content-type: application/json
+
+{
+  "user": {
+    "email": "lilly@yahoo.com",
+    "password": "123456"
+  }
+}
+
+###
+
+DELETE http://localhost:3000/users/sign_out
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjYxNTc5MzAwLCJleHAiOjE2NjI4NzUzMDAsImp0aSI6ImVlYThkMDgyLTE1NWYtNGRlYS1iMzJhLTEwNjBmN2IwNGZjMyJ9.PIYJLY6fKaxnh8klpuQLlMmhPqJbIFlIAbll86QGd5I
+
+###
+
+GET http://localhost:3000/users/1/posts_list
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjYxNTc5MzAwLCJleHAiOjE2NjI4NzUzMDAsImp0aSI6ImVlYThkMDgyLTE1NWYtNGRlYS1iMzJhLTEwNjBmN2IwNGZjMyJ9.PIYJLY6fKaxnh8klpuQLlMmhPqJbIFlIAbll86QGd5I
+
+###
+
+GET http://localhost:3000/users/1/posts/2/comments
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjYxNTc5MzAwLCJleHAiOjE2NjI4NzUzMDAsImp0aSI6ImVlYThkMDgyLTE1NWYtNGRlYS1iMzJhLTEwNjBmN2IwNGZjMyJ9.PIYJLY6fKaxnh8klpuQLlMmhPqJbIFlIAbll86QGd5I
+
+###
+
+POST http://localhost:3000/users/1/posts/2/add_comment
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjYxNTg0ODAyLCJleHAiOjE2NjI4ODA4MDIsImp0aSI6ImU5ZTNlOTdmLTlkNDAtNGQxMS04NjRkLTY2Njk3ZmU3MTMzMyJ9._eFn2a66FzBa7EqiC4yd0pMugjJ1_u3uMcc75cFKw1A
+
+{
+	"comment": "Hi, my name is Jonathan!"
+}

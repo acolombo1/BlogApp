@@ -1,0 +1,20 @@
+HTTP/1.1 302 Found
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Location: http://localhost:3000/
+Content-Type: text/html; charset=utf-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjYxNTc0OTM2LCJleHAiOjE2NjI4NzA5MzYsImp0aSI6IjM4MGUyM2ExLWViNDItNGU3Yi1hY2Y4LTc4ZWM0YWFjYjIzMCJ9.UWDy-Lr58HcROEwYTldaeaCA8-C3bBmo0xdFUoEhRzs
+Cache-Control: no-cache
+Set-Cookie: _blog_app_session=UHt4ev2RCPCuxKXFOHaBdHjmyj0uRM6AdOccXP%2BL6jLUZcMYkOGGpGHRNTRolCGqkizOgiwK%2FvF8ituu%2B9MGD2TxFewKctrVj0SwyRjv%2FUqk7WHiFfpIJmVODuyv3wKmx%2F4uurP4WvjUzhOu8dbEQlQSATsYulG4jMxY%2BCI6qX1nXII6WH9dUfq7Colx%2BnF0EOm02jebeBss00Ovss1BNwizXj6v8NDarR5V31pMd0TSF4%2FLuJyCoxu%2FKd1bEKOoirAXU213OOHkufNoFqh2ZCnCZW5a2q1F2IL8JnWejDD%2FMgDOYfoW8AWYh7q8c%2FYHSum52xptlIexMCXYejZBqpVMXL%2B3hN6b92Up0LQls3sdKomFdtvuyKAqtNBTdzCY7WiqRlxhvJssN7mdbuFbHD87%2BIg7Zb3wlQ%3D%3D--dNEWO0tg94bs3lqv--WLc7wajiupoAiUMdSulB8A%3D%3D; path=/; HttpOnly; SameSite=Lax
+X-Request-Id: 9b55a052-7bf5-4c08-b278-8409c121318c
+X-Runtime: 0.090730
+Server-Timing: start_processing.action_controller;dur=1.7548828125, sql.active_record;dur=3.0087890625, instantiation.active_record;dur=0.0947265625, redirect_to.action_controller;dur=1.33837890625, halted_callback.action_controller;dur=0.7578125, process_action.action_controller;dur=11.900390625
+Vary: Origin
+Connection: close
+Transfer-Encoding: chunked
+
+<html><body>You are being <a href="http://localhost:3000/">redirected</a>.</body></html>
