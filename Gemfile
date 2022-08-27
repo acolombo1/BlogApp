@@ -85,5 +85,5 @@ gem 'bullet'
 gem 'cancancan'
 gem 'devise'
 gem 'devise-jwt'
+gem 'dotenv-rails', groups: %i[development test]
 gem 'rack-cors'
-gem 'dotenv-rails', groups: [:development, :test]

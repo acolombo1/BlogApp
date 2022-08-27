@@ -32,9 +32,8 @@ class Post < ApplicationRecord
       author.update(posts_counter: author.posts_counter - 1)
     end
   end
-  
-  def as_json(options={})
-      super(:only => [:id, :title, :text, :likes_counter, :comments_counter])
-  end
 
+  def as_json(_options = {})
+    super(only: %i[id title text likes_counter comments_counter])
+  end
 end

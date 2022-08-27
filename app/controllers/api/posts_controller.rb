@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def list
     @posts = Post.where(author_id: params[:user_id])
     render json: @posts
@@ -10,5 +10,4 @@ class Api::PostsController < ApplicationController
     @comments = Comment.where(post_id: params[:id])
     render json: @comments
   end
-
 end
