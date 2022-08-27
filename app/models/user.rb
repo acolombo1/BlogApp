@@ -21,8 +21,9 @@ class User < ApplicationRecord
   end
 
   private
-    def generate_api_token
-      self.api_token = Devise.friendly_token
-      self.save
-    end
+
+  def generate_api_token
+    self.api_token = Devise.friendly_token
+    save
+  end
 end

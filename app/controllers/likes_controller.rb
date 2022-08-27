@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  #before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def create
     likes_author = Like.where(author_id: current_user.id)

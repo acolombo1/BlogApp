@@ -14,10 +14,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
-    def authenticate_with_token
-      if params[:api_token]
-        user = User.find_by_api_token(params[:api_token])
-        sign_in(user)
-      end
-    end
+
+  def authenticate_with_token
+    return unless params[:api_token]
+
+    user = User.find_by_api_token(params[:api_token])
+    sign_in(user)
+  end
 end
